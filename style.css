@@ -191,7 +191,7 @@ nav {
 }
 
 #home #s1 {
-    animation: updown 1.5s alternate infinite;
+    animation: updown 1s alternate infinite;
 }
 
 @keyframes updown {
