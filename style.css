@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --body-bg: #151515;
     --contact-bg: #242424;
@@ -32,12 +38,23 @@ body {
 }
 
 /*navbar*/
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #151515;
+    z-index: 10;
+    border-bottom: 1px solid var(--contact-bg);
+    /* height: 4rem; */
+}
+
 .nav-logo {
     font-size: 1.8rem;
     display: inline-block;
-    position: fixed;
+    position: absolute;
     left: 1rem;
     top: 0.5rem;
+    z-index: 10;
 }
 
 .nav-logo span {
@@ -48,34 +65,17 @@ body {
     color: var(--text1);
 }
 
-nav button {
-    font-size: 1.2rem;
-    padding: 0.5em 0.7em;
-    background-color: var(--body-bg);
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    border-radius: 0.5em;
-    position: fixed;
-    right: 1rem;
-    top: 0.5rem;
-}
-
-nav button:hover {
-    background-color: var(--accent);
-    color: var(--text1);
-    transition: 0.5s ease;
-    cursor: pointer
-}
-
 nav ul {
     list-style-type: none;
     text-align: center;
+    padding: 1rem;
+    margin-left: 5rem;
+    backdrop-filter: blur(64px);
+    transition: top 500ms ease-in-out;
 }
 
-nav li {
-    display: inline-block;
-    font-size: 1.3rem;
-    margin-inline: 0.8rem;
+.ul_block {
+    display: block;
 }
 
 nav a,
@@ -94,20 +94,88 @@ nav ul a:focus {
     color: var(--accent);
 }
 
-
-nav .break {
-    width: 100%;
-    height: 1px;
-    background-color: var(--contact-bg);
+nav ul .resume {
+    font-size: 1.2rem;
+    padding: 0.4em 0.7em;
+    /* background-color: var(--body-bg); */
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 0.5em;
+    position: fixed;
+    right: 1rem;
+    top: 0.5rem;
 }
 
-nav {
+nav ul .resume:hover {
+    background-color: var(--accent);
+    color: var(--text1);
+    transition: 0.5s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav ul .resume:focus{
+    text-decoration: none;
+}
+
+nav li {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-inline: 0.8rem;
+    padding-bottom: 0;
+}
+
+
+/* hamburger */
+.hamburger {
+    display: none;
     position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #151515;
-    position: fixed;
-    z-index: 1;
+    z-index: 10;
+    cursor: pointer;
+    background: none;
+    border: none;
+    right: 0.5rem;
+    top: 0px;
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
 }
 
 /* main */
@@ -163,7 +231,7 @@ nav {
 #home .social-list {
     display: flex;
     flex-direction: column;
-    gap:2rem;
+    gap: 2rem;
     position: absolute;
     right: 8rem;
     top: 13rem;
@@ -206,4 +274,38 @@ nav {
 
 #home .scroll:hover {
     cursor: default;
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        height: 4rem;
+    }
+
+    nav ul {
+        padding: 11rem 0;
+        height: 100vh;
+        /* display: none; */
+        position: absolute;
+        top: -100vh;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .ul_block {
+        /* display: block; */
+        top: 0
+    }
+
+    nav li {
+        display: block;
+        padding-bottom: 1.75rem;
+    }
+
+    nav ul .resume {
+        position: static;
+    }
 }
