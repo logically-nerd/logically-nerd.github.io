@@ -236,10 +236,10 @@ nav li {
 } */
 #home {
     margin-top: 4.1rem;
-    height: 90vh;
+    height: 84vh;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    padding-top: 8%;
 }
 
 #home .name {
@@ -250,12 +250,12 @@ nav li {
 }
 
 #home .home-id {
-    font-size: 4rem;
+    font-size: 3.8rem;
     flex-basis: 47rem;
 }
 
 #home .i_am {
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 #home .tags {
@@ -267,6 +267,7 @@ nav li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2.4rem;
 }
 
 #home .socials {
@@ -278,32 +279,35 @@ nav li {
     transition: fill 250ms ease;
 }
 
-#home .scroll {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
+.scroll-sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scroll-sign .scroll {
     color: var(--accent);
     font-size: 2rem;
+    max-width: 40px;
 }
 
-#home #s2 {
-    bottom: 1.5rem;
+.scroll-sign #s2 {
+    transform: translateY(-1.5rem);
 }
 
-#home #s1 {
+.scroll-sign #s1 {
     animation: updown 1s alternate infinite;
 }
 
 @keyframes updown {
     0% {
-        bottom: 1.5rem;
+        transform: translateY(0);
     }
 
     100% {
-        bottom: 1rem;
+        transform: translateY(-0.5rem);
     }
 }
 
-#home .scroll:hover {
+.scroll-sign .scroll:hover {
     cursor: default;
 }
