@@ -140,41 +140,41 @@ nav li {
 .line {
     fill: none;
     stroke: white;
-    stroke-width: 6;
+    stroke-width: 4;
     transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line1 {
     stroke-dasharray: 60 207;
-    stroke-width: 6;
+    stroke-width: 4;
 }
 
 .line2 {
     stroke-dasharray: 60 60;
-    stroke-width: 6;
+    stroke-width: 4;
 }
 
 .line3 {
     stroke-dasharray: 60 207;
-    stroke-width: 6;
+    stroke-width: 4;
 }
 
 .opened .line1 {
     stroke-dasharray: 90 207;
     stroke-dashoffset: -134;
-    stroke-width: 6;
+    stroke-width: 4;
 }
 
 .opened .line2 {
     stroke-dasharray: 1 60;
     stroke-dashoffset: -30;
-    stroke-width: 6;
+    stroke-width: 4;
 }
 
 .opened .line3 {
     stroke-dasharray: 90 207;
     stroke-dashoffset: -134;
-    stroke-width: 6;
+    stroke-width: 4;
 }
 
 @media only screen and (max-width: 900px) {
@@ -212,9 +212,12 @@ nav li {
 
 /* main */
 
-.header {
+.pages .header {
     color: var(--accent);
     text-align: center;
+    font-size: 1.7rem;
+    min-height: 90vh;
+    border: 2px solid red;
 }
 
 .pages {
@@ -279,11 +282,12 @@ nav li {
     transition: fill 250ms ease;
 }
 
-.scroll-sign{
+.scroll-sign {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .scroll-sign .scroll {
     color: var(--accent);
     font-size: 2rem;
@@ -305,6 +309,26 @@ nav li {
 
     100% {
         transform: translateY(-0.5rem);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #home {
+        display: grid;
+        grid-template-columns: 80%;
+        align-items: center;
+    }
+
+    #home .home-id {
+        font-size: 2.2rem;
+    }
+
+    #home .i_am {
+        font-size: 1.8rem;
+    }
+    #home .social-list{
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
 
