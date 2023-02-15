@@ -295,7 +295,7 @@ nav li {
 }
 
 .scroll-sign #s2 {
-    transform: translateY(-1.5rem);
+    transform: translateY(-2.5rem);
 }
 
 .scroll-sign #s1 {
@@ -316,7 +316,7 @@ nav li {
     #home {
         display: grid;
         grid-template-columns: 80%;
-        grid-template-rows: 20rem;
+        grid-template-rows: 20rem 5rem;
     }
 
     #home .home-id {
@@ -327,12 +327,33 @@ nav li {
     #home .i_am {
         font-size: 1.8rem;
     }
-    #home .social-list{
+
+    #home .social-list {
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    .scroll-sign #s2 {
+        transform: translateY(-5rem);
+    }
+
+    .scroll-sign #s1 {
+        animation: updown 1s alternate infinite;
+    }
+
+    @keyframes updown {
+        0% {
+            transform: translateY(-3rem);
+        }
+
+        100% {
+            transform: translateY(-2.5rem);
+        }
     }
 }
 
 .scroll-sign .scroll:hover {
     cursor: default;
 }
+
+/* about section */
