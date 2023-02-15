@@ -316,7 +316,7 @@ nav li {
     #home {
         display: grid;
         grid-template-columns: 80%;
-        align-items: center;
+        grid-template-rows: 20rem;
     }
 
     #home .home-id {
