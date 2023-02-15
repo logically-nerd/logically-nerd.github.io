@@ -331,6 +331,7 @@ nav li {
     #home .social-list {
         flex-direction: row;
         justify-content: space-around;
+        padding-top: 20%;
     }
 
     .scroll-sign #s2 {
