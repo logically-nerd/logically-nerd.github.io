@@ -177,7 +177,7 @@ nav li {
     stroke-width: 4;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .hamburger {
         display: flex;
     }
@@ -222,6 +222,12 @@ nav li {
     width: 100%;
     font-size: 1.1rem;
 }
+.pages h4 {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+    color: var(--text1);
+}
 
 /* home */
 
@@ -264,7 +270,7 @@ nav li {
     color: var(--accent);
 }
 
-#home .social-list {
+.social-list {
     gap: 2rem;
     display: flex;
     flex-direction: column;
@@ -311,7 +317,7 @@ nav li {
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     #home {
         display: grid;
         grid-template-columns: 80%;
@@ -358,14 +364,16 @@ nav li {
 
 /* about section */
 
-#about {}
+#about {
+    min-height: 90%;
+}
 
 #about .details {
     padding: 1rem 3rem;
     text-align: justify;
     line-height: 1.8rem;
     background-color: var(--contact-bg);
-    border-radius: 2%;
+    border-radius: 1rem;
     margin: 1rem 2rem;
 }
 
@@ -392,11 +400,12 @@ nav li {
     height: 3rem;
 }
 
-#about .connect{
+#about .connect {
     font-size: 1.1rem;
     background-color: var(--contact-bg);
     color: var(--text1)
 }
+
 #about a {
     text-decoration: none;
 }
@@ -409,4 +418,37 @@ nav li {
 
 #about .connect:hover {
     cursor: pointer;
+}
+@media screen and (max-width:500px) {
+    #about .details{
+        text-align: left;
+        padding: 1rem 1.5rem;
+        margin: 1rem 1.5rem;
+    }
+}
+/* after adding img make it responsive */
+#contact{
+    /* border: 2px solid red; */
+}
+#contact .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+#contact form {
+    display: grid;
+    gap: 1.2rem;
+    min-width: 22rem;
+}
+#contact input{
+    height: 2.5rem;
+    border-radius: 0.4rem;
+    caret-color: var(--accent);
+    color: var(--text2);
+    font-size: inherit;
+    background: none;
+}
+#contact input:focus{
+    border: none;
+    border-bottom: 2px var(--accent);
 }
