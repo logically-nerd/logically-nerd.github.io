@@ -215,13 +215,13 @@ nav li {
 .pages .header {
     color: var(--accent);
     text-align: center;
-    font-size: 1.7rem;
-    min-height: 90vh;
-    border: 2px solid red;
+    font-size: 1.5rem;
 }
 
 .pages {
     width: 100%;
+    min-height: 90vh;
+    font-size: 1.1rem;
 }
 
 /* home */
@@ -358,3 +358,56 @@ nav li {
 }
 
 /* about section */
+
+#about {}
+
+#about .details {
+    padding: 1rem 3rem;
+    text-align: justify;
+    line-height: 1.8rem;
+    background-color: var(--contact-bg);
+    border-radius: 2%;
+    margin: 1rem 2rem;
+}
+
+#about .details h2 {
+    padding: 2rem 0;
+}
+
+#about .details p {
+    color: var(--text2);
+}
+
+#about .nickname,
+#about .motive {
+    color: var(--accent);
+}
+
+#about .connect {
+    border: 2px solid var(--accent);
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-inline: 1rem;
+    width: max-content;
+    height: 3rem;
+}
+
+#about .connect{
+    font-size: 1.1rem;
+    background-color: var(--contact-bg);
+    color: var(--text1)
+}
+#about a {
+    text-decoration: none;
+}
+
+#about a:hover,
+#about .connect:hover {
+    background-color: var(--accent);
+    color: var(--text1);
+}
+
+#about .connect:hover {
+    cursor: pointer;
+}
