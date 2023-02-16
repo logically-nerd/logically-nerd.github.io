@@ -3,7 +3,7 @@
 :root {
     --body-bg: #151515;
     --contact-bg: #242424;
-    --accent: #4EE1A0;
+    --accent: #4ee1a0;
     --text1: #ffffff;
     --text2: #D9D9D9;
     --invalid: #ff6f5b;
@@ -278,11 +278,11 @@ nav li {
     gap: 2.4rem;
 }
 
-#home .socials {
+.socials {
     display: inline-block;
 }
 
-#home .socials:hover path {
+.socials:hover path {
     fill: var(--accent);
     transition: fill 250ms ease;
 }
@@ -431,13 +431,13 @@ nav li {
 /* after adding img make it responsive */
 #contact {
     /* border: 2px solid red; */
-    height: 80vh;
+    height: 76.8vh;
 }
 
 #contact form {
     display: grid;
     grid-template-columns: auto;
-    margin-inline: 5rem;
+    margin-left: 5rem;
     grid-auto-rows: minmax(4rem, auto);
     row-gap: 1rem;
     position: relative;
@@ -501,8 +501,43 @@ nav li {
     border: 0.1rem solid var(--invalid);
 }
 
+#contact .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    #contact .social-list{
+        display: none;
+    }
+    #contact form{
+        margin-inline: 5rem;
+    }
+}
 /* footer */
+
 footer {
-    height: 10vh;
+    min-height: 13.1vh;
     background-color: var(--contact-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .socials{
+    display: none;
+}
+
+footer .trademark{
+    display: inline-block;
+    height: 13vh;
+    width: 13vh;
+    background-size: contain;
+}
+
+@media screen and (max-width: 900px) {
+    footer .socials {
+            display: inline-block;
+        }
 }
