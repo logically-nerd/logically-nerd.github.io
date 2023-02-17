@@ -233,6 +233,11 @@ nav li {
     color: var(--text1);
 }
 
+.filler {
+    height: 4.1rem;
+    width: 100%;
+}
+
 /* home */
 
 /* add this animation somewhere else
@@ -247,11 +252,10 @@ nav li {
     100%{background-color: #ff9b85;}
 } */
 #home {
-    margin-top: 4.1rem;
-    height: 81.5vh;
+    height: 91.5vh;
     display: flex;
     justify-content: space-around;
-    padding-top: 8%;
+    padding-top: 16%;
 }
 
 #home .name {
@@ -325,6 +329,10 @@ nav li {
     #home .home-id {
         padding-left: 1.2rem;
     }
+
+    #home .social-list {
+        padding-right: 1.2rem;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -376,6 +384,19 @@ nav li {
 
 #about {
     min-height: 90vh;
+}
+
+#about .filler {
+    background-image: url(resources/bg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+}
+
+#about .header {
+    padding-top: 1.8rem;
 }
 
 #about .details {
@@ -441,7 +462,8 @@ nav li {
 /* after adding img make it responsive */
 #contact {
     /* border: 2px solid red; */
-    min-height: 76.5vh;
+    padding-top: 2vh;
+    min-height: 78vh;
     background-color: var(--contact-bg);
     border-radius: 1rem 1rem 0 0;
 }
@@ -536,15 +558,28 @@ nav li {
     }
 
     #contact form {
+        padding-inline: 2rem;
         margin-bottom: 2rem;
         margin-inline: auto;
+    }
+
+    #contact #fname-label {
+        left: 3rem;
+    }
+
+    #contact #mail-label {
+        left: 3rem;
+    }
+
+    #contact #msg-label {
+        left: 3rem;
     }
 }
 
 /* footer */
 
 footer {
-    min-height: 15vh;
+    height: 9vh;
     background-color: var(--contact-bg);
     display: flex;
     justify-content: space-around;
@@ -558,8 +593,8 @@ footer .socials {
 
 footer .trademark {
     display: inline-block;
-    height: 13vh;
-    width: 13vh;
+    height: 8vh;
+    width: 8vh;
     background-size: contain;
     border-radius: 50%;
     outline: 2px solid #4ee1a0;
@@ -581,4 +616,30 @@ footer .socials {
     height: 2px;
     width: 5vw;
     background-color: #4ee1a0;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-end-line {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer-end-line {
+        display: none;
+    }
+
+    .footer-line {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    footer .trademark {
+        height: 10vh;
+        width: 10vh;
+    }
+    footer{
+        height: 11vh;
+    }
 }
