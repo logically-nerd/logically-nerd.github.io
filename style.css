@@ -429,9 +429,6 @@ nav li {
     padding-inline: 1rem;
     width: max-content;
     height: 3rem;
-}
-
-#about .connect {
     font-size: 1.1rem;
     background-color: var(--contact-bg);
     color: var(--text1)
@@ -459,7 +456,75 @@ nav li {
     }
 }
 
-/* after adding img make it responsive */
+/* skills */
+#skills {
+    min-height: 90vh;
+}
+
+#skills .filler {
+    background-image: url(resources/skills-filler.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+}
+
+#skills .container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#skills .container div {
+    background-color: var(--contact-bg);
+    border-radius: 0.4rem;
+}
+
+#skills dl{
+    list-style-image: url();
+}
+
+/* experience */
+#experience .filler {
+    background-image: url(resources/exp-filler.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#experience .filler button {
+    border: 2px solid var(--accent);
+    border-radius: 0.4rem;
+    padding-inline: 1rem;
+    width: max-content;
+    height: 3rem;
+    font-size: 1.1rem;
+    background: #24242478;
+    color: #fff;
+}
+
+#experience .filler a {
+    text-decoration: none;
+}
+
+#experience .filler a:hover,
+#experience .filler button:hover {
+    background-color: #4ee19fc5;
+    border-radius: 0.4rem;
+    color: var(--text1);
+}
+
+#experience .filler button:hover {
+    cursor: pointer;
+}
+
+/* contact */
 #contact {
     /* border: 2px solid red; */
     padding-top: 2vh;
@@ -639,7 +704,8 @@ footer .socials {
         height: 10vh;
         width: 10vh;
     }
-    footer{
+
+    footer {
         height: 11vh;
     }
 }
