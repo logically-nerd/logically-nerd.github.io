@@ -387,7 +387,7 @@ nav li {
 }
 
 #about .filler {
-    background-image: url(resources/bg.jpg);
+    background-image: url(resources/about-filler.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
