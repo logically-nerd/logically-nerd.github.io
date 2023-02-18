@@ -530,7 +530,7 @@ nav ul li a.active {
 
 /* experience */
 #experience {
-    min-height: 97vh;
+    padding-bottom: 1rem;
 }
 
 #experience .filler {
@@ -582,6 +582,7 @@ nav ul li a.active {
     gap: 2rem;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 #experience .container::-webkit-scrollbar {
@@ -595,11 +596,13 @@ nav ul li a.active {
     background-color: var(--contact-bg);
     color: var(--text2);
 }
-#experience .container .exp:nth-child(even){
+
+#experience .container .exp:nth-child(even) {
     color: var(--contact-bg);
     background-color: var(--text2);
     margin-top: 12rem;
 }
+
 #experience .container .exp:nth-child(odd) {
     margin-bottom: 12rem;
 }
@@ -614,29 +617,97 @@ nav ul li a.active {
 
 
 /* poftolio */
+#portfolio{
+    min-height: 98vh;
+}
+#portfolio .filler {
+    height: 5rem;
+    background-image: url(resources/portfolio-filler.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+}
 
-#portfolio ul {
+#portfolio .projects {
+    width: 80%;
+    margin-inline: auto;
     display: flex;
-    list-style-type: none;
-    justify-content: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+    border-radius: 0.1rem;
+    gap: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-bottom: 2rem;
 }
 
-#portfolio li {
-    padding: 0.2rem 1.3rem;
+#portfolio .projects::-webkit-scrollbar {
+    display: none;
 }
 
-#portfolio li:hover,
-#portfolio li:focus {
+#portfolio .projects .pro {
+    flex: 0 0 20rem;
+    padding: 2rem;
+    border-radius: 0.4rem;
+    background-color: var(--contact-bg);
+    color: var(--text2);
+}
+
+#portfolio .projects .pro:nth-child(even) {
+    color: var(--contact-bg);
+    background-color: var(--text2);
+}
+
+
+#portfolio .projects .pro .pro-title {
+    font-size: 2rem;
     text-decoration: underline;
     text-decoration-color: var(--accent);
-    cursor: pointer;
+    padding-bottom: 2rem;
+    text-align: left;
 }
 
-#portfolio .projects div {
-    width: 80vw;
-    height: 20px;
+/* #portfolio .achievements {
+    width: 80%;
     margin-inline: auto;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+    border-radius: 0.1rem;
+    gap: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+#portfolio .achievements::-webkit-scrollbar {
+    display: none;
+}
+
+#portfolio .achievements .certi {
+    flex: 0 0 4rem;
+    padding: 2rem;
+    border-radius: 0.4rem;
+    background-color: var(--text2);
+    color: var(--text2);
+}
+
+#portfolio .achievements .certi:nth-child(even) {
+    color: var(--contact-bg);
+    background-color: var(--contact-bg);
+}
+
+
+#portfolio .achievements .certi-title {
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    padding-bottom: 2rem;
+    text-align: left;
+} */
 
 /* contact */
 #contact {
@@ -655,6 +726,7 @@ nav ul li a.active {
     background-size: cover;
     opacity: 0.6;
 }
+
 
 #contact .header {
     padding-top: 2rem;
@@ -744,6 +816,18 @@ nav ul li a.active {
     #contact .container {
         flex-direction: column;
         row-gap: 2rem;
+    }
+
+    #contact .filler {
+        height: 5rem;
+    }
+
+    #contact h4 {
+        margin-bottom: 1.8rem;
+    }
+
+    #contact .header {
+        padding-top: 0.2rem;
     }
 
     #contact .container p {

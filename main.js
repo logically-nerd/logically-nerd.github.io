@@ -92,8 +92,8 @@ window.addEventListener("scroll", function () {
 //     }
 // }
 
-//infinite scrolling experience
-var container = document.querySelector('#experience .container');
+//infinite scrolling in portfolio
+var container = document.querySelector('#portfolio .projects');
 var content = container.innerHTML;
 var maxClones = 10; 
 var i = 1;
