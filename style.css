@@ -308,7 +308,7 @@ nav li {
 }
 
 .scroll-sign #s2 {
-    transform: translateY(-2.5rem);
+    transform: translateY(-4rem);
 }
 
 .scroll-sign #s1 {
@@ -317,11 +317,11 @@ nav li {
 
 @keyframes updown {
     0% {
-        transform: translateY(0);
+        transform: translateY(-1.5rem);
     }
 
     100% {
-        transform: translateY(-0.5rem);
+        transform: translateY(-2rem);
     }
 }
 
