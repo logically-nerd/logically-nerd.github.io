@@ -83,8 +83,7 @@ nav a:visited {
     color: var(--text1);
 }
 
-nav ul a:hover,
-nav ul a:focus {
+nav ul a:hover {
     text-decoration: var(--accent) underline;
 }
 
@@ -123,6 +122,9 @@ nav li {
     padding-bottom: 0;
 }
 
+nav ul li a.active {
+    text-decoration: var(--accent) underline;
+}
 
 /* hamburger */
 .hamburger {
@@ -527,6 +529,10 @@ nav li {
 }
 
 /* experience */
+#experience {
+    min-height: 97vh;
+}
+
 #experience .filler {
     background-image: url(resources/exp-filler.jpg);
     background-attachment: fixed;
@@ -565,28 +571,63 @@ nav li {
     cursor: pointer;
 }
 
+#experience .container {
+    background-color: var(--contact-bg);
+    width: 80%;
+    margin-inline: auto;
+    height: 70%;
+}
 
+#experience .container .line{
+    height: 2px;
+    width: 100%;
+    background-color: var(--text2);
+}
 /* poftolio */
 
 #portfolio ul {
     display: flex;
     list-style-type: none;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-#portfolio li:hover {
+#portfolio li {
+    padding: 0.2rem 1.3rem;
+}
+
+#portfolio li:hover,
+#portfolio li:focus {
     text-decoration: underline;
     text-decoration-color: var(--accent);
     cursor: pointer;
+}
+
+#portfolio .projects div {
+    width: 80vw;
+    height: 20px;
+    margin-inline: auto;
 }
 
 /* contact */
 #contact {
     /* border: 2px solid red; */
     padding-top: 2vh;
-    min-height: 78vh;
+    min-height: 80vh;
     background-color: var(--contact-bg);
-    border-radius: 1rem 1rem 0 0;
+}
+
+#contact .filler {
+    height: 9rem;
+    background-image: url(resources/contact-filler.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+}
+
+#contact .header {
+    padding-top: 2rem;
 }
 
 #contact form {
@@ -617,7 +658,7 @@ nav li {
 
 #contact #msg-label {
     left: 1rem;
-    bottom: 6.9rem;
+    bottom: 11.8rem;
 }
 
 #contact input {
@@ -666,6 +707,7 @@ nav li {
 #contact .container p {
     text-align: center;
     width: 25%;
+    margin-bottom: 7rem;
 }
 
 @media screen and (max-width: 830px) {
@@ -676,6 +718,7 @@ nav li {
 
     #contact .container p {
         width: 70%;
+        margin-bottom: 0;
     }
 
     #contact form {
@@ -695,6 +738,32 @@ nav li {
     #contact #msg-label {
         left: 3rem;
     }
+}
+
+#contact .send-btn {
+    display: flex;
+    justify-content: right;
+}
+
+#contact button {
+    padding: 0.5rem 1.4rem;
+    border: 2px solid var(--accent);
+    border-radius: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--contact-bg);
+    color: var(--text1);
+    margin-bottom: 1rem;
+}
+
+#contact button:hover {
+    background-color: var(--accent);
+}
+
+#contact button:hover path {
+    fill: #fff;
 }
 
 /* footer */

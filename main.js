@@ -6,15 +6,27 @@ var typed = new Typed(".tags", {
     loop: true
 });
 
+//smooth scroll
+var navLinks = document.querySelectorAll("nav ul li a");
+
+for (var i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        var sectionId = this.getAttribute("href"); // Get the ID of the section
+        var section = document.querySelector(sectionId); // Find the section element
+        section.scrollIntoView({ behavior: "smooth" }); // Scroll to the section
+    });
+}
+
 //hamburger menu
-var x = document.querySelector("ul");
+var x = document.querySelector("nav ul");
 var y = document.querySelector(".hamburger");
 function myFunction() {
     x.classList.toggle("ul_block");
-    // x.style.top = "0vh";
     y.classList.toggle('opened');
     y.setAttribute('aria-expanded', y.classList.contains('opened'));
 }
+
 
 //multiple titles
 
@@ -24,3 +36,58 @@ setInterval(function () {
     document.title = titleText[counter % titleText.length];
     counter++;
 }, 2000)
+
+//active section
+
+var navLinks = document.querySelectorAll("nav ul li a");
+var sections = document.querySelectorAll("section");
+
+// Update the active section when the user scrolls
+window.addEventListener("scroll", function () {
+    // Get the current scroll position
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Loop through the sections and check which one is currently visible
+    for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var sectionTop = section.offsetTop;
+        var sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            // If the section is visible, add the "active" class to the corresponding link in the navbar
+            var link = document.querySelector('nav ul li a[href="#' + section.id + '"]');
+            if (link) {
+                link.classList.add("active");
+            }
+        } else {
+            // If the section is not visible, remove the "active" class from the corresponding link in the navbar
+            var link = document.querySelector('nav ul li a[href="#' + section.id + '"]');
+            if (link) {
+                link.classList.remove("active");
+            }
+        }
+    }
+});
+
+// //project section in portfolio
+
+// function toggleDiv(divId) {
+//     hideAllDivs();
+//     if (divId == all) {
+//         var divs = document.getElementsByTagName("#portfolio .projects div");
+//         for (var i = 0; i < divs.length; i++) {
+//             divs[i].style.display = "block";
+//         }
+//     }
+//     else {
+//         var div = document.getElementById(divId);
+//         div.style.display = "block";
+//     }
+// }
+
+// function hideAllDivs() {
+//     var divs = document.getElementsByTagName("#portfolio .projects div");
+//     for (var i = 0; i < divs.length; i++) {
+//         divs[i].style.display = "none";
+//     }
+// }
