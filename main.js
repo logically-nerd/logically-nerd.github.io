@@ -91,3 +91,27 @@ window.addEventListener("scroll", function () {
 //         divs[i].style.display = "none";
 //     }
 // }
+
+//infinite scrolling experience
+var container = document.querySelector('#experience .container');
+var content = container.innerHTML;
+var maxClones = 10; 
+var i = 1;
+while (container.offsetWidth <= content.length * i && i <= maxClones) {
+    container.innerHTML += content;
+    i++;
+}
+container.addEventListener('scroll', function () {
+    if (container.scrollLeft == 0) {
+        // Clone content to the left
+        for (var j = 1; j <= maxClones; j++) {
+            container.innerHTML = content + container.innerHTML;
+        }
+        container.scrollLeft = content.length;
+    } else if (container.scrollLeft + container.clientWidth == container.scrollWidth) {
+        // Clone content to the right
+        for (var j = 1; j <= maxClones; j++) {
+            container.innerHTML += content;
+        }
+    }
+});

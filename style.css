@@ -572,17 +572,47 @@ nav ul li a.active {
 }
 
 #experience .container {
-    background-color: var(--contact-bg);
     width: 80%;
     margin-inline: auto;
-    height: 70%;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+    border-radius: 0.1rem;
+    gap: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-#experience .container .line{
-    height: 2px;
-    width: 100%;
-    background-color: var(--text2);
+#experience .container::-webkit-scrollbar {
+    display: none;
 }
+
+#experience .container .exp {
+    flex: 0 0 4rem;
+    padding: 2rem;
+    border-radius: 0.4rem;
+    background-color: var(--contact-bg);
+    color: var(--text2);
+}
+#experience .container .exp:nth-child(even){
+    color: var(--contact-bg);
+    background-color: var(--text2);
+    margin-top: 12rem;
+}
+#experience .container .exp:nth-child(odd) {
+    margin-bottom: 12rem;
+}
+
+#experience .container .exp .exp-title {
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    padding-bottom: 2rem;
+    text-align: left;
+}
+
+
 /* poftolio */
 
 #portfolio ul {
