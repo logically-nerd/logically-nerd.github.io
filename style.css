@@ -19,12 +19,33 @@ html {
     box-sizing: border-box;
     font-size: 100%;
     scroll-behavior: smooth;
+
 }
 
 *,
 *::after,
 *::before {
     box-sizing: inherit;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--body-bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4ee19fb1;
+    border-radius: 0.2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4ee19fe9
 }
 
 body {
@@ -230,9 +251,11 @@ nav ul li a.active {
 
 .pages h4 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     margin-top: 1rem;
     color: var(--text1);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
 }
 
 .filler {
@@ -617,9 +640,10 @@ nav ul li a.active {
 
 
 /* poftolio */
-#portfolio{
+#portfolio {
     min-height: 98vh;
 }
+
 #portfolio .filler {
     height: 5rem;
     background-image: url(resources/portfolio-filler.jpg);
@@ -711,105 +735,47 @@ nav ul li a.active {
 
 /* contact */
 #contact {
-    /* border: 2px solid red; */
     padding-top: 2vh;
-    min-height: 80vh;
-    background-color: var(--contact-bg);
-}
-
-#contact .filler {
-    height: 9rem;
+    min-height: 90vh;
+    background-color: hsla(0, 0%, 14%, 0.9);
     background-image: url(resources/contact-filler.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.6;
+    padding-top: 5rem;
 }
 
-
-#contact .header {
-    padding-top: 2rem;
-}
-
-#contact form {
-    display: grid;
-    grid-template-columns: auto;
-    margin-left: 5rem;
-    grid-auto-rows: minmax(4rem, auto);
-    row-gap: 1rem;
-    position: relative;
-}
-
-#contact label {
-    font-size: 1rem;
-    position: absolute;
-    padding-inline: 0.5rem;
-    background-color: var(--contact-bg);
-}
-
-#contact #fname-label {
-    left: 1rem;
-    top: -0.75rem;
-}
-
-#contact #mail-label {
-    left: 1rem;
-    top: 4.2rem;
-}
-
-#contact #msg-label {
-    left: 1rem;
-    bottom: 11.8rem;
-}
-
-#contact input {
-    height: 2.5rem;
+#contact .container-tank {
+    margin-inline: 5rem;
     border-radius: 0.4rem;
-    caret-color: var(--accent);
-    color: var(--text1);
-    border: 0.1rem solid var(--text2);
-    font-size: inherit;
-    background: none;
-    font-family: inherit;
-    padding: 0.4rem 1.5rem;
+    background-color: hsla(0, 0%, 14%, 0.9);
 }
-
-#contact #msg {
-    font-family: inherit;
-    background: none;
-    border-radius: 0.4rem;
-    caret-color: var(--accent);
-    color: var(--text1);
-    border: 0.1rem solid var(--text2);
-    font-size: inherit;
-    background: none;
-    font-family: inherit;
-    padding-top: 0.4rem;
-    padding-left: 1.35rem;
-    resize: none;
+#contact .header{
+    padding-top: 1rem;
 }
-
-#contact input:focus {
-    background-color: var(--contact-bg);
-    color: var(--text1);
-}
-
-#contact input:invalid,
-#contact textarea:invalid {
-    border: 0.1rem solid var(--invalid);
-}
-
 #contact .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 2rem 0;
+    height: 50vh;
 }
 
 #contact .container p {
     text-align: center;
+    line-height: 2;
     width: 25%;
-    margin-bottom: 7rem;
+}
+
+#contact .container p span {
+    color: var(--accent);
+}
+
+#contact .divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--accent);
 }
 
 @media screen and (max-width: 830px) {
@@ -818,12 +784,8 @@ nav ul li a.active {
         row-gap: 2rem;
     }
 
-    #contact .filler {
-        height: 5rem;
-    }
-
     #contact h4 {
-        margin-bottom: 1.8rem;
+        margin-bottom: 1rem;
     }
 
     #contact .header {
@@ -835,49 +797,16 @@ nav ul li a.active {
         margin-bottom: 0;
     }
 
-    #contact form {
+    #contact .container .social-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         padding-inline: 2rem;
-        margin-bottom: 2rem;
-        margin-inline: auto;
     }
 
-    #contact #fname-label {
-        left: 3rem;
+    #contact .container .social-list .socials {
+        flex: 1 1 1rem;
     }
-
-    #contact #mail-label {
-        left: 3rem;
-    }
-
-    #contact #msg-label {
-        left: 3rem;
-    }
-}
-
-#contact .send-btn {
-    display: flex;
-    justify-content: right;
-}
-
-#contact button {
-    padding: 0.5rem 1.4rem;
-    border: 2px solid var(--accent);
-    border-radius: 1rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    background-color: var(--contact-bg);
-    color: var(--text1);
-    margin-bottom: 1rem;
-}
-
-#contact button:hover {
-    background-color: var(--accent);
-}
-
-#contact button:hover path {
-    fill: #fff;
 }
 
 /* footer */
@@ -889,10 +818,6 @@ footer {
     justify-content: space-around;
     align-items: center;
     border-top: 1.2px solid var(--body-bg);
-}
-
-footer .socials {
-    display: none;
 }
 
 footer .trademark {
@@ -912,27 +837,11 @@ footer .socials {
 
 .footer-line {
     height: 2px;
-    width: 10vw;
+    width: 38vw;
     background-color: #4ee1a0;
-}
-
-.footer-end-line {
-    height: 2px;
-    width: 5vw;
-    background-color: #4ee1a0;
-}
-
-@media screen and (max-width: 600px) {
-    .footer-end-line {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 400px) {
-    .footer-end-line {
-        display: none;
-    }
-
     .footer-line {
         display: none;
     }
