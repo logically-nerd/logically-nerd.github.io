@@ -412,7 +412,7 @@ nav ul li a.active {
 }
 
 #about .filler {
-    background-image: url(resources/about-filler.jpg);
+    background-image: url(resources/about-filler.webp);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -491,7 +491,7 @@ nav ul li a.active {
 }
 
 #skills .filler {
-    background-image: url(resources/skills-filler.jpg);
+    background-image: url(resources/skills-filler.webp);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -557,7 +557,7 @@ nav ul li a.active {
 }
 
 #experience .filler {
-    background-image: url(resources/exp-filler.jpg);
+    background-image: url(resources/exp-filler.webp);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -646,7 +646,7 @@ nav ul li a.active {
 
 #portfolio .filler {
     height: 5rem;
-    background-image: url(resources/portfolio-filler.jpg);
+    background-image: url(resources/portfolio-filler.webp);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -738,7 +738,7 @@ nav ul li a.active {
     padding-top: 2vh;
     min-height: 90vh;
     background-color: hsla(0, 0%, 14%, 0.9);
-    background-image: url(resources/contact-filler.jpg);
+    background-image: url(resources/contact-filler.webp);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

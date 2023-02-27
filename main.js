@@ -9,7 +9,7 @@ var typed = new Typed(".tags", {
 //smooth scroll
 var navLinks = document.querySelectorAll("nav ul li a");
 
-for (var i = 0; i < navLinks.length; i++) {
+for (var i = 0; i < navLinks.length-1; i++) {
     navLinks[i].addEventListener("click", function (event) {
         event.preventDefault(); // Prevent the default link behavior
         var sectionId = this.getAttribute("href"); // Get the ID of the section
@@ -30,12 +30,12 @@ function myFunction() {
 
 //multiple titles
 
-let titleText = ["Adnan Shahid", "Welcome to my website", "logically-nerd", "Welcome to my website"];
+let titleText = ["Welcome to my website", "Adnan Shahid | logically-nerd"];
 let counter = 0;
 setInterval(function () {
     document.title = titleText[counter % titleText.length];
     counter++;
-}, 2000)
+}, 5000)
 
 //active section
 
