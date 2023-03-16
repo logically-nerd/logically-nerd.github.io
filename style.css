@@ -265,17 +265,6 @@ nav ul li a.active {
 
 /* home */
 
-/* add this animation somewhere else
-#home{
-    animation: chngbg 5s infinite;
-}
-@keyframes chngbg{
-    0%{background-color: #ee6055;}
-    25%{background-color: #60d394;}
-    50%{background-color: #aaf683;}
-    75%{background-color: #ffd97d;}
-    100%{background-color: #ff9b85;}
-} */
 #home {
     height: 91.5vh;
     display: flex;
@@ -364,7 +353,7 @@ nav ul li a.active {
     #home {
         display: grid;
         grid-template-columns: 80%;
-        grid-template-rows: 20rem 5rem;
+        grid-template-rows: 20rem 18rem;
     }
 
     #home .home-id {
@@ -377,13 +366,14 @@ nav ul li a.active {
     }
 
     #home .social-list {
+        padding-inline: 50%;
         flex-direction: row;
         justify-content: space-around;
         padding-top: 10%;
     }
 
     .scroll-sign #s2 {
-        transform: translateY(-5rem);
+        transform: translateY(-10rem);
     }
 
     .scroll-sign #s1 {
@@ -392,11 +382,11 @@ nav ul li a.active {
 
     @keyframes updown {
         0% {
-            transform: translateY(-3rem);
+            transform: translateY(-8rem);
         }
 
         100% {
-            transform: translateY(-2.5rem);
+            transform: translateY(-7.5rem);
         }
     }
 }
@@ -694,45 +684,6 @@ nav ul li a.active {
     text-align: left;
 }
 
-/* #portfolio .achievements {
-    width: 80%;
-    margin-inline: auto;
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 1rem;
-    border-radius: 0.1rem;
-    gap: 2rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-#portfolio .achievements::-webkit-scrollbar {
-    display: none;
-}
-
-#portfolio .achievements .certi {
-    flex: 0 0 4rem;
-    padding: 2rem;
-    border-radius: 0.4rem;
-    background-color: var(--text2);
-    color: var(--text2);
-}
-
-#portfolio .achievements .certi:nth-child(even) {
-    color: var(--contact-bg);
-    background-color: var(--contact-bg);
-}
-
-
-#portfolio .achievements .certi-title {
-    font-size: 2rem;
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
-    padding-bottom: 2rem;
-    text-align: left;
-} */
-
 /* contact */
 #contact {
     padding-top: 2vh;
@@ -751,9 +702,11 @@ nav ul li a.active {
     border-radius: 0.4rem;
     background-color: hsla(0, 0%, 14%, 0.9);
 }
-#contact .header{
+
+#contact .header {
     padding-top: 1rem;
 }
+
 #contact .container {
     display: flex;
     justify-content: space-around;
@@ -779,6 +732,10 @@ nav ul li a.active {
 }
 
 @media screen and (max-width: 830px) {
+    #contact .container-tank {
+        margin-inline: 2rem;
+    }
+
     #contact .container {
         flex-direction: column;
         row-gap: 2rem;

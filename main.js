@@ -1,8 +1,8 @@
 //type animation
 var typed = new Typed(".tags", {
     strings: ["Competitive Programmer", "Developer", "Web3 Enthusiast", "Designer", "Badminton Player"],
-    typeSpeed: 70,
-    backSpeed: 50,
+    typeSpeed: 100,
+    backSpeed: 90,
     loop: true
 });
 
