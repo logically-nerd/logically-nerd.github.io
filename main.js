@@ -1,6 +1,6 @@
 //type animation
 var typed = new Typed(".tags", {
-    strings: ["Competitive Programmer", "Developer", "Web3 Enthusiast", "Designer", "Badminton Player"],
+    strings: ["Competitive Programmer", "Developer", "AI/ML Enthusiast", "Designer", "Badminton Player"],
     typeSpeed: 100,
     backSpeed: 90,
     loop: true
