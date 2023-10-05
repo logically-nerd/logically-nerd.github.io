@@ -1,10 +1,10 @@
 const expData = [
-    {
-        job: "SWE Intern",
-        company: "LinkedIn",
-        tech: "",
-        time: "May - July, 2024"
-    },
+    // {
+    //     job: "SWE Intern",
+    //     company: "LinkedIn",
+    //     tech: "",
+    //     time: "May - July, 2024"
+    // },
     {
         job: "HackerWar",
         company: "SIH college level",
