@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${nunitoSans.className} tracking-wider min-h-screen w-full grid place-items-center py-24 max-md:pb-60 bg-gray-900 text-white md:text-lg`}>
+      <body className={`${nunitoSans.className} tracking-wider min-h-screen w-full grid place-items-center py-24 max-md:pb-16 bg-gray-900 text-white md:text-lg`}>
         <Loader />
         <Header />
         {children}

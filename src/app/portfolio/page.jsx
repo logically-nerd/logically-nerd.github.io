@@ -6,7 +6,7 @@ import PageWrapper from "@/components/PageWrapper";
 
 export default function page() {
   return (
-    <PageWrapper className="w-full h-full grid md:grid-cols-2 gap-3 px-3">
+    <PageWrapper className="w-full h-full grid md:grid-cols-2 max-md:pb-40 gap-3 px-3">
       {/* Left side */}
       <div className="flex flex-col gap-3">
         <Tech />

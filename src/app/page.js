@@ -15,7 +15,7 @@ const comforta = Comfortaa({
 
 export default function Home() {
   return (
-    <PageWrapper className="flex justify-between px-7 flex-col md:flex-row">
+    <PageWrapper className="flex justify-between px-7 flex-col gap-5 md:flex-row">
       <div>
         <div className={`${comforta.className} text-4xl md:text-6xl leading-relaxed md:leading-loose `}>
           Hi, I am<br />Adnan Shahid
