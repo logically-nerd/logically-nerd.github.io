@@ -6,6 +6,11 @@ const expData = [
     //     time: "May - July, 2024"
     // },
     {
+        job: "Ranked 5304",
+        company: "Google KickStart",
+        time: "2022"
+    },
+    {
         job: "HackerWar",
         company: "SIH college level",
         tech: "MERN stack, OpenAI API",
@@ -15,12 +20,7 @@ const expData = [
         job: "Research Intern",
         company: "Samsung Prism",
         tech: "AWS DynamoDB",
-        time: "May - Nov, 2023"
-    },
-    {
-        job: "Ranked 5304",
-        company: "Google KickStart",
-        time: "2022"
+        time: "May, 2023 - Feb, 2024"
     }
 ]
 export default expData;
