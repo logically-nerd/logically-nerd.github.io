@@ -14,6 +14,7 @@ const expData = [
         job: "HackerWar",
         company: "SIH college level",
         tech: "MERN stack, OpenAI API",
+        summary:"Built a web app for small businesses to tackle legal issues. It uses OpenAI to recommend solutions and automatically generate legal documents based on user input.",
         time: "2023"
     },
     {

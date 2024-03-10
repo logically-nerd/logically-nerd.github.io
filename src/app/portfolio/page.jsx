@@ -65,7 +65,7 @@ function Experience() {
       <h1 className="py-1 px-4">Experiences</h1>
       <div className=" h-[17.1rem] w-full p-3 bg-slate-700 rounded-lg">
         <ul className="flex flex-col gap-y-5 overflow-y-scroll h-full py-2 px-5">
-          {expData.map((data, k) => (
+          {expData.reverse().map((data, k) => (
             <>
               <li key={k} className="flex justify-between">
                 <div>
@@ -78,7 +78,8 @@ function Experience() {
                   <div className="text-xs">{data.time}</div>
                 </div>
               </li>
-              <div className="px-8 opacity-50">{k != expData.length - 1 && <hr/>}</div>
+              {data.summary && <div className="text-sm">{data.summary}</div>}
+              <div className="px-8 opacity-50">{k != expData.length - 1 && <hr />}</div>
             </>
           ))}
         </ul>

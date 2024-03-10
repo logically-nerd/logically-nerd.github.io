@@ -1,7 +1,7 @@
 const projectData = [
   {
     name: "LegallyFit",
-    code: "https://legallyfit.s2sharpit.me/",
+    code: "https://github.com/KrAparesh/Legally-Fit",
     url: "https://legallyfit.s2sharpit.me/",
     techStack: ["MERN", "OpenAI"],
     type: "web",
