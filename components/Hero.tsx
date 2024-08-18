@@ -30,7 +30,7 @@ const Hero = () => {
               words='I am Adnan Shahid'
             />
             <TypewriterEffectSmooth words={interests} />
-            <a href="#projects" className='md:mt-7'>
+            <a href="#experience" className='md:mt-7'>
               <MagicButton
                 title="My Work"
                 icon={<FaLocationArrow />}
