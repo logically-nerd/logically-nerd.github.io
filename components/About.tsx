@@ -32,7 +32,7 @@ export function About() {
               I have hands-on experience with Python and am diving into AI and ML, applying practical knowledge to real-world problems.
             </li>
           </ul>
-          Let's connect and innovate for the future.
+          Let&apos;s connect and innovate for the future.
         </div>
         <div
           className="h-full w-full md:flex justify-around items-center"

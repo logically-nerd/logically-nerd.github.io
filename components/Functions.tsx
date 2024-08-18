@@ -60,8 +60,8 @@ export const getDescription = (description: string[]) => {
     } else {
         return (
             <ul className="list-disc ml-5 text-base space-y-2">
-                {description.map((desc) => (
-                    <li>
+                {description.map((desc, index) => (
+                    <li key={index}>
                         {desc}
                     </li>
                 ))}
@@ -74,7 +74,10 @@ export const getTechStack = (techStack: string[]) => {
     return (
         <>
             {techStack.map((tech) => (
-                <span className="mr-2 mt-4 rounded-lg bg-neutral-800 px-2 py-1 text-sm font-medium text-purple">
+                <span
+                    key={tech}
+                    className="mr-2 mt-4 rounded-lg bg-neutral-800 px-2 py-1 text-sm font-medium text-purple"
+                >
                     {tech}
                 </span>
             ))}
