@@ -1,10 +1,21 @@
+"use client"
 import React from "react";
+import { motion } from "framer-motion";
 
 type IconGridProps = {
     icons: (string | undefined)[];
     iconsPerRow?: number; // Optional prop to specify the number of icons per row
     className?: string;
 };
+
+const fadeInAnimation = {
+    initial: { opacity: 0, y: 20 },
+    animate: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: { delay: 0.05 * index }
+    }),
+}
 
 const IconGrid: React.FC<IconGridProps> = ({ icons, iconsPerRow = 4, className }) => {
     // Filter out undefined icons
@@ -19,7 +30,12 @@ const IconGrid: React.FC<IconGridProps> = ({ icons, iconsPerRow = 4, className }
             style={{ gridTemplateColumns }}
         >
             {validIcons.map((icon, index) => (
-                <img
+                <motion.img
+                    variants={fadeInAnimation}
+                    initial='initial'
+                    whileInView='animate'
+                    viewport={{ once: true }}
+                    custom={index}
                     key={index}
                     src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
                     alt={`${icon} icon`}

@@ -5,6 +5,7 @@ import Stats from "./Stats";
 import { useState } from "react";
 import { PiConfetti } from "react-icons/pi";
 import { IoCopyOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 export function About() {
 
@@ -16,12 +17,27 @@ export function About() {
     setCopied(true)
   }
 
+  const slideInAnimation = {
+    initial: { opacity: 0, x: -20 },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: { delay: 0.7 }
+    },
+  }
+
   return (
     <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 max-w-7xl mx-auto w-full -mt-5 pt-5" id="about">
       <div className="h-full w-full py-10 pl-10 pr-3 grid grid-rows-1 lg:grid-rows-[2fr_1fr]">
         <div className="md:text-2xl mb-3">
           <h1 className="text-4xl text-center mb-10 ">About Me</h1>
-          <ul className="list-disc space-y-7 mb-7">
+          <motion.ul
+            variants={slideInAnimation}
+            initial='initial'
+            whileInView='animate'
+            viewport={{ once: true }}
+            className="list-disc space-y-7 mb-7"
+          >
             <li>
               I’m enthusiastic about tackling complex problems and finding logical solutions.
             </li>
@@ -31,7 +47,7 @@ export function About() {
             <li>
               I have hands-on experience with Python and am diving into AI and ML, applying practical knowledge to real-world problems.
             </li>
-          </ul>
+          </motion.ul>
           Let&apos;s connect and innovate for the future.
         </div>
         <div
@@ -46,7 +62,7 @@ export function About() {
             Do you want to start a project together?
           </h1>
           <button
-            className="relative inline-flex h-12 overflow-hidden rounded-lg p-[1px]"
+            className="relative inline-flex h-12 mb-5 overflow-hidden rounded-lg p-[1px]"
             onClick={handleCopy}
           >
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />

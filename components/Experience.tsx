@@ -1,10 +1,13 @@
+"use client"
+
 import { getDescription, getTechStack, getTimeline } from '@/components/Functions'
 import { experience } from '@/data/experience'
 import React from 'react'
+import {motion} from 'framer-motion'
 
 function Experience() {
     return (
-        <section className="max-w-7xl min-h-[90vh] pt-10 pb-20" id="experience">
+        <section className="max-w-7xl min-h-[90vh] pt-5 pb-20" id="experience">
             <h1 className='text-4xl text-center mt-10 mb-14'>Experience</h1>
             <div>
                 {experience.slice().reverse().map((exp, index) => (

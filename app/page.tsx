@@ -8,6 +8,7 @@ import { navItems } from "@/components/nav-items";
 import Footer from "@/components/Footer";
 import ProgressBar from "@/components/progress-bar"; // Import the ProgressBar component
 import { motion } from "framer-motion";
+import Projects from "@/components/Work";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <Hero />
           <About />
           <Experience />
+          <Projects />
           <Footer />
         </div>
       </motion.main>

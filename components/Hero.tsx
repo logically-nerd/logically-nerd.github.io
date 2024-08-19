@@ -1,4 +1,4 @@
-import { FaLocationArrow } from 'react-icons/fa6'
+import { FaLinkedinIn, FaLocationArrow } from 'react-icons/fa6'
 import { BackgroundBeams } from './ui/background-beams'
 import MagicButton from './ui/magic-button'
 import { Spotlight } from './ui/Spotlight'
@@ -30,13 +30,27 @@ const Hero = () => {
               words='I am Adnan Shahid'
             />
             <TypewriterEffectSmooth words={interests} />
-            <a href="#experience" className='md:mt-7'>
-              <MagicButton
-                title="My Work"
-                icon={<FaLocationArrow />}
-                position='right'
-              />
-            </a>
+            <div className='flex w-full items-center justify-evenly'>
+              <a href="#work" className='md:mt-7'>
+                <MagicButton
+                  title="My Work"
+                  icon={<FaLocationArrow />}
+                  position='right'
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/logically-nerd/"
+                className='lg:-ml-20 md:mt-7'
+                target='_blank'
+              >
+                <div
+                  title="LinkedIn"
+                  className="w-12 h-12 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 border-2 border-blue-500 hover:bg-blue-500 rounded-lg"
+                >
+                  <FaLinkedinIn className="w-6 h-6" />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
         <BackgroundBeams />

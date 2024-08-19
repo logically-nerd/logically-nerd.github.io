@@ -1,5 +1,5 @@
 import { experience } from "../data/experience";
-import { projects } from "../data/projects";
+import { work } from "../data/work";
 
 interface Duration {
     start_month: number;
@@ -34,7 +34,7 @@ export const getExpCount = () => {
 }
 
 export const getProjectCount = () => {
-    const len = projects.length || 1
+    const len = work.length || 1
     return `${len}+`
 }
 
@@ -50,7 +50,7 @@ export const getTimeline = (duration: Duration): string => {
     return timeline
 }
 
-export const getDescription = (description: string[]) => {
+export const getDescription = (description: string[], extraClass?: string) => {
     if (description.length === 1) {
         return (
             <p className="text-base">
@@ -59,7 +59,7 @@ export const getDescription = (description: string[]) => {
         )
     } else {
         return (
-            <ul className="list-disc ml-5 text-base space-y-2">
+            <ul className={"list-disc ml-5 text-base space-y-2 " + extraClass}>
                 {description.map((desc, index) => (
                     <li key={index}>
                         {desc}
@@ -70,13 +70,13 @@ export const getDescription = (description: string[]) => {
     }
 }
 
-export const getTechStack = (techStack: string[]) => {
+export const getTechStack = (techStack: string[], extraClass?: string) => {
     return (
         <>
             {techStack.map((tech) => (
                 <span
                     key={tech}
-                    className="mr-2 mt-4 rounded-lg bg-neutral-800 px-2 py-1 text-sm font-medium text-purple"
+                    className={"mr-2 mt-4 rounded-lg bg-neutral-800 px-2 py-1 text-sm font-medium text-purple" + extraClass}
                 >
                     {tech}
                 </span>
@@ -84,3 +84,28 @@ export const getTechStack = (techStack: string[]) => {
         </>
     )
 }
+
+interface WorkData {
+    title: string;
+    description: string[];
+    tech: string[];
+    url: string;
+    codeURL: string;
+    type: string[]
+}
+
+export const getUniqueTypes = (workData: WorkData[]) => {
+    const types: string[] = []
+    workData.forEach((work) => {
+        work.type.forEach((type) => {
+            types.push(type.toUpperCase())
+        })
+    })
+    return Array.from(new Set(types))
+}
+
+export const filterData = (workData: WorkData[], type: string): WorkData[] => {
+    return workData.filter((work) =>
+        work.type.some((t) => t.toUpperCase() === type.toUpperCase())
+    );
+};
