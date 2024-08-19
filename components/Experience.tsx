@@ -3,7 +3,7 @@
 import { getDescription, getTechStack, getTimeline } from '@/components/Functions'
 import { experience } from '@/data/experience'
 import React from 'react'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function Experience() {
     return (
@@ -12,10 +12,22 @@ function Experience() {
             <div>
                 {experience.slice().reverse().map((exp, index) => (
                     <div key={index} className='mb-8 flex flex-wrap justify-center'>
-                        <div className='w-full lg:w-1/4'>
+                        <motion.div
+                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, x: -100 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className='w-full lg:w-1/4'
+                        >
                             <p className='mb-2 pt-1 text-sm text-neutral-400'>{getTimeline(exp.duration)}</p>
-                        </div>
-                        <div className="w-full text-lg max-w-xl lg:w-3/4">
+                        </motion.div>
+                        <motion.div
+                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, x: 100 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                            className="w-full text-lg max-w-xl lg:w-3/4"
+                        >
                             <h6 className='mb-2 font-semibold'>
                                 {exp.role} -
                                 <span className=' text-purple'>
@@ -24,7 +36,7 @@ function Experience() {
                             </h6>
                             {getDescription(exp.description)}
                             {getTechStack(exp.tech)}
-                        </div>
+                        </motion.div>
                     </div>
                 ))}
             </div>

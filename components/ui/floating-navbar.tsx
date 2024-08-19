@@ -41,6 +41,14 @@ export const FloatingNav = ({
         }
     });
 
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+        e.preventDefault();
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <AnimatePresence mode="wait">
             <motion.div
@@ -64,7 +72,11 @@ export const FloatingNav = ({
                     <Link
                         key={`link=${idx}`}
                         href={`#${navItem.link}`}
-                        onClick={() => setVisible(false)}
+                        onClick={(e) => {
+                            handleScroll(e, navItem.link)
+                            setVisible(false)
+                        }}
+                        scroll={false}
                         className={cn(
                             "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
                         )}
