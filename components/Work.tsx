@@ -63,6 +63,7 @@ function Projects() {
                     tech={project.tech}
                     url={project.url}
                     codeURL={project.codeURL}
+                    index={index}
                 />
             ))} />
         </section>

@@ -7,26 +7,27 @@ import { getDescription, getTechStack } from "./Functions";
 
 export function WorkCard(
     {
-        title, description, tech, codeURL, url
+        title, description, tech, codeURL, url, index
     }: {
         title: string;
         description: string[];
         tech: string[];
         codeURL?: string;
-        url?: string
+        url?: string;
+        index: number;
     }
 ) {
+
+    const colours = ["bg-red-400", "bg-blue-400", "bg-green-400", "bg-indigo-400"]
 
     return (
         <div className="max-w-xs w-full sm:w-[20rem] group/card">
             <div
-                className={cn(
-                    "cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",
-                    "bg-cover"
-                )}
-                style={{ backgroundImage: `url(${cardImg[Math.floor(Math.random() * cardImg.length)]})` }}
+                className={
+                    `cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto ${colours[index % colours.length]} border-2 border-black-200 flex flex-col justify-between p-4`
+                }
             >
-                <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60"></div>
+                <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black-200 opacity-60"></div>
                 <div className="text content h-full flex flex-col justify-end group-hover/card:justify-start">
                     <div className="w-full flex z-10">
                         <h1 className="font-bold w-[70%] text-xl md:text-2xl text-gray-50 relative">
