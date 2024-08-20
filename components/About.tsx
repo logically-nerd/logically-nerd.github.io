@@ -22,7 +22,7 @@ export function About() {
     animate: {
       opacity: 1,
       x: 0,
-      transition: { delay: 0.7 }
+      transition: { delay: 0.5 }
     },
   }
 
