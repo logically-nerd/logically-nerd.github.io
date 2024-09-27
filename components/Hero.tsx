@@ -9,6 +9,14 @@ import { interests } from '@/data/interests'
 
 const Hero = () => {
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className='pb-20 pt-32'>
       <div>
@@ -31,7 +39,10 @@ const Hero = () => {
             />
             <TypewriterEffectSmooth words={interests} />
             <div className='flex w-full items-center justify-evenly'>
-              <a href="#work" className='md:mt-7'>
+              <a
+                onClick={(e) => handleScroll(e, 'work')}
+                className='md:mt-7'
+              >
                 <MagicButton
                   title="My Work"
                   icon={<FaLocationArrow />}
