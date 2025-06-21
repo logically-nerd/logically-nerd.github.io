@@ -59,7 +59,7 @@ export const getDescription = (description: string[], extraClass?: string) => {
         )
     } else {
         return (
-            <ul className={"list-disc ml-5 text-base space-y-2 " + extraClass}>
+            <ul className={"list-disc list-inside ml-5 text-base space-y-2 " + extraClass}>
                 {description.map((desc, index) => (
                     <li key={index}>
                         {desc}

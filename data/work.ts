@@ -11,4 +11,16 @@ export const work = [
         codeURL: "",
         type: ["AI/ML", "Web"]
     },
+    {
+        title: "MAV",
+        description: [
+            "Real-time navigation with YOLO-based vision for obstacle detection and pathfinding.",
+            "Voice commands, gesture control, and Google Maps integration for seamless interaction.",
+            "Runs offline on low-cost devices, making assistive mobility more accessible and reliable."
+        ],
+        tech: ["Flutter", "YOLO(E)", "Python"],
+        url: "",
+        codeURL: "https://github.com/logically-nerd/MAV/tree/main",
+        type: ["AI/ML", "Mobile App"]
+    }
 ]

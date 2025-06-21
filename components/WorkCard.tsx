@@ -38,7 +38,7 @@ export function WorkCard(
                         <h1 className="font-bold w-[70%] text-xl md:text-2xl text-gray-50 relative">
                             {title}
                         </h1>
-                        <div className="w-[30%] flex justify-around items-center ">
+                        <div className="w-[30%] justify-around items-center hidden group-hover/card:flex">
                             {codeURL && <FaGithub className="h-6 w-6" />}
                             {url && <MdOutlineArrowOutward className="h-6 w-6" />}
                         </div>
