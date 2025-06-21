@@ -21,7 +21,7 @@ export function WorkCard(
     return (
         <div className="max-w-xs w-full sm:w-[20rem] group/card">
             <div
-                className="cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto flex flex-col justify-between p-4"
+                className="cursor-default overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto flex flex-col justify-between p-4"
             // style={{ backgroundImage: `url(${cardImg[Math.floor(Math.random() * cardImg.length)]})` }}
             >
                 <Image
@@ -39,8 +39,26 @@ export function WorkCard(
                             {title}
                         </h1>
                         <div className="w-[30%] justify-around items-center hidden group-hover/card:flex">
-                            {codeURL && <FaGithub className="h-6 w-6" />}
-                            {url && <MdOutlineArrowOutward className="h-6 w-6" />}
+                            {codeURL && (
+                                <a
+                                    href={codeURL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-50 hover:text-gray-300 transition-colors"
+                                >
+                                    <FaGithub className="h-6 w-6 cursor-pointer" title="Github" />
+                                </a>
+                            )}
+                            {url && (
+                                <a
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-50 hover:text-gray-300 transition-colors"
+                                >
+                                    <MdOutlineArrowOutward className="h-6 w-6 cursor-pointer" title="View" />
+                                </a>
+                            )}
                         </div>
                     </div>
                     {getDescription(description, "hidden group-hover/card:block z-10 mr-5 mt-3 overflow-x-hidden overflow-y-clip text-sm")}
